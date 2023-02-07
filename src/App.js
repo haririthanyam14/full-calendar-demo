@@ -23,6 +23,7 @@ function App() {
       events={events}
       views={["timeGridWeek", "timeGridDay" ]}
       select={handleSelectSlot}
+      slotDuration={'00:45:00'}
     />
   );
 }
