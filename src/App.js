@@ -6,8 +6,13 @@ import './App.css';
 function App() {
   return (
     <FullCalendar
+      headerToolbar={{
+        start: "today prev next",
+        end: "dayGridMonth dayGridWeek dayGridDay",
+      }}
       plugins={[ dayGridPlugin ]}
       initialView="dayGridMonth"
+      views={["dayGridMonth", "dayGridWeek", "dayGridDay"]}
     />
   );
 }
