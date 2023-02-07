@@ -23,7 +23,9 @@ function App() {
       events={events}
       views={["timeGridWeek", "timeGridDay" ]}
       select={handleSelectSlot}
-      slotDuration={'00:45:00'}
+      slotLabelInterval={"01:00"}
+      slotDuration={'00:30:00'}
+      nowIndicator
     />
   );
 }
