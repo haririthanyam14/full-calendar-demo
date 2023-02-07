@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import FullCalendar from '@fullcalendar/react' // must go before plugins
-import dayGridPlugin from '@fullcalendar/daygrid' 
+import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from "@fullcalendar/interaction";
 
 import './App.css';
@@ -18,10 +18,10 @@ function App() {
         start: "today prev next",
         end: "dayGridMonth dayGridWeek dayGridDay",
       }}
-      plugins={[ dayGridPlugin, interactionPlugin ]}
-      initialView="dayGridWeek"
+      plugins={[ timeGridPlugin, interactionPlugin ]}
+      initialView="timeGridWeek"
       events={events}
-      views={["dayGridMonth", "dayGridWeek", "dayGridDay"]}
+      views={["timeGridWeek", "timeGridDay" ]}
       select={handleSelectSlot}
     />
   );
