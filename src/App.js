@@ -6,11 +6,19 @@ import interactionPlugin from "@fullcalendar/interaction";
 import './App.css';
 
 function App() {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([{title: 'From Calendar', start: '2023-02-08T12:30:00', end:'2023-02-08T12:45:00'}]);
+  const [reservedSlots, setReservedSlots] = useState([]);
 
   function handleSelectSlot(slotInfo){
-    alert(JSON.stringify(slotInfo))
+    const newEvent = {
+      title: `${slotInfo.start} - ${slotInfo.end}`, 
+      start: slotInfo.start, 
+      end: slotInfo.end
+    }
+    setReservedSlots((prevEvents) => ([...prevEvents, newEvent]));
+    setEvents((prevEvents) => ([...prevEvents, newEvent]))
   }
+
   return (
     <FullCalendar
       selectable
