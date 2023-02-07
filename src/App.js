@@ -16,7 +16,8 @@ function App() {
       id: `idTemplate-${id}`,
       title: `${slotInfo.start} - ${slotInfo.end}`, 
       start: slotInfo.start, 
-      end: slotInfo.end
+      end: slotInfo.end,
+      color: 'blue'
     }
     setId((prevId) => (prevId + 1))
     setReservedSlots((prevEvents) => ([...prevEvents,{...slotInfo, id: `idTemplate-${id}`}]));
@@ -47,6 +48,7 @@ function App() {
       slotDuration={'00:30:00'}
       nowIndicator
       eventClick={handleUnSelectSlot}
+      eventColor='purple'
     />
   );
 }
